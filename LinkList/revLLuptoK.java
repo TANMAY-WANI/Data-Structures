@@ -6,7 +6,7 @@ public class revLLuptoK {
             this.data = data;
         }
     }
-    static Node stdApproach(Node node){
+    static Node stdApproach(Node node,int k){
         Node prev = null;
         Node prev2 = null;
         Node curr = node;
@@ -51,7 +51,7 @@ public class revLLuptoK {
         third.next = fourth;
         printLL(fisrt);
         System.out.println("After reversing");
-        Node rev = stdApproach(fisrt);
+        Node rev = stdApproach(fisrt,3);
         printLL(rev);
     }
 }
