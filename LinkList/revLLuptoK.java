@@ -1,17 +1,16 @@
 public class revLLuptoK {
-    class Node{
-        int data;
-        Node next;
-        Node(int data){
-            this.data = data;
-        }
-    }
+    // class Node{
+    //     int data;
+    //     Node next;
+    //     Node(int data){
+    //         this.data = data;
+    //     }
+    // }
     static Node stdApproach(Node node,int k){
         Node prev = null;
         Node prev2 = null;
         Node curr = node;
         Node fwd = node.next;
-        int k_const = k;
         while (curr!=null){
             if (k>0){
                 fwd = curr.next;
