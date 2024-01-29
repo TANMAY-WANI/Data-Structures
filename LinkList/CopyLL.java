@@ -17,6 +17,28 @@ class CopyLL{
     static node createNode(int data){
         return new node(data);
     }
+
+    static node optimisedApproach(node head){
+        for (node i = head; i!=null ; i = i.next.next){
+            node n = new node(i.data);
+            n.next = i.next;
+            i.next = n;
+        }
+        for (node i = head; i!=null ; i=i.next.next){
+            node arb = i.arb;
+            if (arb!=null){
+                i.next.arb = arb.next;
+            }
+        }
+        node head2 = head.next;
+        for (node i = head;i!=null;i=i.next){
+            node n = i.next;
+            node n2 = i.next.next;
+            n.next = (n2!=null)?n2.next:null;
+            i.next = n2; //Breaking the connection
+        }
+        return head2;
+    }
     static node brutForce(node head){
         HashMap<Integer,node> myMap = new HashMap<>();
         node curr = head;
