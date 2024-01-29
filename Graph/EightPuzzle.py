@@ -75,5 +75,5 @@ def dfs(initial_state):
                 stack.append(move)
 if __name__ == "__main__":
     state = [1,2,3,8,0,4,7,5,6]
-    bfs(state)
-    # dfs(state)
+    # bfs(state)
+    dfs(state)
