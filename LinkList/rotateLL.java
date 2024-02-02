@@ -1,4 +1,12 @@
 public class rotateLL {
+    static class Node {
+        int data;
+        Node next;
+        Node(int data){
+            this.data = data;
+        }
+        
+    }
     static int calcLength(Node head){
         Node curr = head;
         int length = 0;

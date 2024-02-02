@@ -12,7 +12,7 @@ class list {
 }
 
 public class FlattenLL {
-    static Node brutForce(list head){
+    static list brutForce(list head){
         ArrayList <list> myList = new ArrayList<>();
         list curr = head;
         while (curr!=null){
@@ -25,10 +25,10 @@ public class FlattenLL {
         }
         // Collections.sort();
         Collections.sort(myList,(a,b)->a.data-b.data);
-        Node new_head = new Node(myList.get(0).data);
-        Node temp = new_head;
+        list new_head = new list(myList.get(0).data);
+        list temp = new_head;
         for (int i=1;i<myList.size();i++){
-            temp.next= new Node(myList.get(i).data);
+            temp.next= new list(myList.get(i).data);
             temp = temp.next;
         }
         return new_head;
@@ -49,8 +49,8 @@ public class FlattenLL {
         head.next.next.next.bottom = new list(35);
         head.next.next.next.bottom.bottom = new list(40);
         head.next.next.next.bottom.bottom.bottom = new list(45);
-        Node new_head = brutForce(head);
-        Node curr = new_head;
+        list new_head = brutForce(head);
+        list curr = new_head;
         while (curr!=null){
             System.out.println(curr.data);
             curr = curr.next;
