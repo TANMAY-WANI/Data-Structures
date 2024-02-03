@@ -53,7 +53,8 @@ public class ExprTree {
         }
     }
 
-    static int getValue(){
+    static int getValue(Node head){
+        brutForce(head);
         return Integer.parseInt(stack.pop());
     }
 
@@ -69,8 +70,7 @@ public class ExprTree {
             root.right.right = new Node("/");
             root.right.right.left = new Node("20");
             root.right.right.right = new Node("2");
-            brutForce(root);
-            System.out.println(getValue());
+            System.out.println(getValue(root));
 
         }
     }
