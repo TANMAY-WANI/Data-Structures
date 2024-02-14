@@ -14,41 +14,22 @@ public class CheckBinarytree {
     }
     static boolean isCompleteBT(Node root)
     {
-          //add code here.
         //   Leaf Node
-          if (root.left == null && root.right == null){
-              return true;
-          }
-          if (root.left == null || root.right == null){
-              return false;
-          }
-          return isCompleteBT(root.left) && isCompleteBT(root.right);
+            Queue<Node> que = new LinkedList<>();
+            que.add(root);
+            
+            while(!que.isEmpty()){
+                Node rem = que.poll();
+                if(rem == null) break;
+                que.add(rem.left);
+                que.add(rem.right);
+            }
+            
+            while(!que.isEmpty() && que.peek()==null) que.poll();
+            
+            return que.isEmpty() ;
+        
 	} 
-
-    static boolean iterativeApproach(Node root){
-        if (root == null){
-            // Empty tree is a binary tree
-            return true;
-        }
-        Queue<Node> queue = new LinkedList<>();
-
-        queue.add(root);
-        while (!queue.isEmpty()){
-            Node curr = queue.remove();
-            if (curr.left == null && curr.right == null){
-                // leaf node
-                continue;
-            }else if (curr.left == null || curr.right == null){
-                return false;
-            }
-            else{
-                queue.add(curr.left);
-                queue.add(curr.right);
-            }
-        }
-        return true;
-
-    }
 
     public static void main(String[] args) {
         // Constructing the tree
@@ -59,8 +40,7 @@ public class CheckBinarytree {
         root.left.left = new Node(4);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        // System.out.println(isCompleteBT(root));
-        System.out.println(iterativeApproach(root));
+        System.out.println(isCompleteBT(root));
 
         
     }

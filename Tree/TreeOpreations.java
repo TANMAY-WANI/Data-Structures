@@ -264,6 +264,6 @@ public interface TreeOpreations {
         // System.out.println(height(root));
         // System.out.println(diameter2(root).dia);
         // System.out.println(kLevelSum(root, 3));
-        stdApproach(root);
+        // stdApproach(root);
     }
 }
