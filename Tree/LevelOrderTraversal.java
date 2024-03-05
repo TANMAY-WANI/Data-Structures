@@ -55,6 +55,9 @@ public class LevelOrderTraversal {
             System.out.println();
         }
     }
+    // give a simple level order traversal of a binary tree that returns arraylist as outpu
+    
+
     public static void main(String[] args) {
         // Build a tree
 
