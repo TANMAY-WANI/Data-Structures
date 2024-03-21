@@ -16,8 +16,7 @@ public class CalcMaxSum {
         if (root == null){
             return;
         }
-        // System.out.println(root.data);
-        // myList.put(root, null)
+
         ArrayList<Integer> curList = new ArrayList<>();
         if (root.right !=null){
 
